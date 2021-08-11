@@ -1,0 +1,47 @@
+@use '../colors';
+@use '../fonts';
+
+.jumbotron {
+  height: 100vh;
+  position: relative;
+  background-color: colors.$primary-blue;
+
+  @media (max-width: 768px) {
+    height: 70vh;
+  }
+
+  .headline {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    color: colors.$white;
+
+    h1 {
+      text-transform: uppercase;
+      font-family: fonts.$header;
+      font-size: 4rem;
+      margin-bottom: 5rem;
+      letter-spacing: 5px;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        margin-bottom: 3.5rem;
+      }
+    }
+
+    .arrow-down {
+      width: 30px;
+    }
+  }
+
+  background-image: url(../../images/desktop/image-header.jpg);
+  background-size: cover;
+  background-position: bottom center;
+
+  @media (max-width: 375px) {
+    background-image: url(../../images/mobile/image-header.jpg);
+  }
+}

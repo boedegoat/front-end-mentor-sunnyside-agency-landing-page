@@ -1,0 +1,9 @@
+{
+  "name": "sunnyside-agency-landing-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.37.5"
+  }
+}

@@ -1,0 +1,16 @@
+.gallery {
+  display: flex;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+
+    picture {
+      flex: 1 1 50%;
+    }
+  }
+}

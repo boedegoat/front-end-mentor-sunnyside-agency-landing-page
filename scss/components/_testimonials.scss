@@ -1,0 +1,68 @@
+@use '../colors';
+@use '../fonts';
+
+.testimonials {
+  padding: 10vw;
+
+  @media (max-width: 768px) {
+    padding: 4rem 5vw;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: fonts.$header;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: colors.$grayish-blue-1;
+  }
+
+  .people-list {
+    display: flex;
+    list-style: none;
+    margin-top: 4rem;
+
+    li {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .profile-picture {
+        border-radius: 50%;
+        width: 60px;
+      }
+
+      .content {
+        color: colors.$desaturated-blue;
+        line-height: 1.6em;
+        margin-top: 2.5rem;
+        margin-bottom: 3.5rem;
+        width: 85%;
+
+        @media (max-width: 768px) {
+          margin-bottom: 1.25rem;
+        }
+      }
+
+      .author {
+        color: colors.$desaturated-blue;
+        font-family: fonts.$header;
+        margin-bottom: 10px;
+      }
+
+      .job {
+        color: colors.$grayish-blue-1;
+      }
+
+      @media (max-width: 768px) {
+        margin-bottom: 5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+}

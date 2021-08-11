@@ -1,0 +1,47 @@
+@use '../colors';
+@use '../fonts';
+
+.footer {
+  background-color: colors.$footer-bg;
+  color: colors.$footer-text;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo {
+    fill: colors.$footer-text;
+  }
+
+  .navigation,
+  .socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation {
+    margin-top: 1.5rem;
+
+    li {
+      padding: 5px 25px;
+
+      a:hover {
+        color: colors.$white;
+      }
+    }
+  }
+
+  .socials {
+    margin-top: 4rem;
+
+    li {
+      padding: 0 10px;
+
+      a:hover path {
+        fill: colors.$white;
+      }
+    }
+  }
+}

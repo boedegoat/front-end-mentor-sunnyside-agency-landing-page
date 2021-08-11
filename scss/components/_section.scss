@@ -1,0 +1,145 @@
+@use '../fonts';
+@use '../colors';
+
+.section {
+  display: flex;
+
+  > .text,
+  > .image,
+  > .combo {
+    flex: 1 1 50%;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .text {
+    h1 {
+      font-family: fonts.$header;
+    }
+
+    &.graphic-design {
+      color: colors.$graphic-design-text;
+    }
+
+    &.photography {
+      color: colors.$photography-text;
+    }
+  }
+
+  > .text {
+    padding: 6rem;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    > h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: colors.$desaturated-blue;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        margin: 0 auto 1.4rem;
+      }
+    }
+
+    > p {
+      color: colors.$grayish-blue-2;
+      line-height: 1.6em;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    > a {
+      text-transform: uppercase;
+      position: relative;
+
+      @media (max-width: 768px) {
+        align-self: center;
+      }
+
+      p {
+        position: relative;
+        font-family: fonts.$header;
+        z-index: 2;
+
+        @media (max-width: 768px) {
+          font-size: 15px;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: -5%;
+        right: -5%;
+        bottom: -1px;
+        height: 8px;
+        border-radius: 10px;
+        transition: background 0.3s;
+      }
+
+      &.yellow::before {
+        background: lighten(colors.$yellow, $amount: 40%);
+      }
+      &.orange::before {
+        background: lighten(colors.$soft-red, $amount: 20%);
+      }
+
+      &.yellow:hover::before {
+        background: colors.$yellow;
+      }
+      &.orange:hover::before {
+        background: colors.$soft-red;
+      }
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+      order: 2;
+      padding: 3.5rem 2rem;
+    }
+  }
+
+  > .combo {
+    position: relative;
+
+    .text {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 100%;
+      padding: 0 3em;
+
+      @media (max-width: 768px) {
+        padding: 0 1.2em;
+      }
+
+      h1 {
+        margin-bottom: 1.5rem;
+        font-weight: 900;
+      }
+
+      p {
+        line-height: 1.6em;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
